@@ -74,19 +74,7 @@ Coastal mangroves in Malindi-Ungwana Bay buffer shorelines and support local liv
 * **Vegetation & Bareland Dynamics:** Mangrove cover rose from **45 ha** in 2007 to **62 ha** in 2012, declined to **38 ha** by 2022 amid peak bareland expansion (**241 ha** in 2017) and stagnant water buildup, and recovered to **61 ha** in 2025—accompanied by the notable emergence of **56 ha of invasive *Prosopis juliflora*** (`13.19%` on the 2025 rehabilitation dashboard) along drier inland margins.
 * **Surface Water & Turbidity (`NDTI`):** Surface water expanded to **278 ha** by 2025, driven in part by trapped inland water pooling behind accreted beach sand. `NDTI` mapping separated clearer coastal waters (lower values, down to `-0.13`) from higher-turbidity, stagnant ponded areas (`> 0.02`–`0.03`).
 * **Hydrological Blockages & Restoration Plan:** Field surveys confirmed that sand buildup blocks the channel connecting the larger **Southern Pond** to the **Northern Pond** (which sit at an elevation difference of roughly **1 ft / 30 cm**) as well as the northern exit channels. Approximately **250 m** of targeted community-led channel excavation—**~130 m** in the lower connecting channel and **~120 m** in the northern exit channels—was mapped to restore daily tidal flushing.
-* **Model Accuracy Metrics (Console Output Placeholder):**
-  * **Overall Accuracy:** **[Insert % from GEE Console]**
-  * **Kappa Coefficient:** **[Insert value from GEE Console]**
-  * **User's / Producer's Accuracy Notes:** **[Summarize class-level precision and recall]**
-
+ 
 ---
 
-## Script Maintenance & Customization Checklist
 
-* **Define `roi` Explicitly:** Uncomment `var vcr = ...` and set it to your Malindi-Ungwana / Marereni study boundary asset so `roi` resolves cleanly.
-* **Switch Epochs Easily:** Update `start_date`, `end_date`, the image collection (Landsat 7 for 2007–2017; Sentinel-2 for 2022–2025), and the per-epoch training assets (`mangrove_007`, `bareland_07`, `water_07`) along with output filenames (`lc_2007` $\rightarrow$ `lc_2012`, etc.).
-* **Variable Naming Consistency:** In the turbidity section, `addNdti` creates a band named `'NDTI'` while intermediate variables/layers are labeled `ndci_image` / `ndciClass3` (`'NDCI for Class 3'`). Keep `'NDTI'` consistent when exporting or feeding layers into the web dashboard.
-* **Spatial Resolution Alignment:** Match `scale` in `sampleRegions` (`10`) and `Export.image.toDrive` (`10` vs. `30`) to the native sensor resolution (`30 m` for Landsat 7; `10 m` for Sentinel-2).
-```
-
-I have updated the `README.md` with the quantitative area table (`2007`–`2025`), spatial coordinates and elevation profile of the Malindi-Ungwana Beach / Marereni site, exact spectral index definitions (`NDVI`, `NDMI`, `MNDWI`, `BSI`, `MVI`, and `NDTI`), KoboCollect vs. Google Earth Pro sampling notes, and the 250 m channel excavation findings from your report. Let me know if you'd like to plug in your console accuracy metrics or adjust any section!
